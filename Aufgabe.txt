@@ -1,0 +1,28 @@
+
+Hey!
+
+In this *.zip is a Unity Project for Version Unity-2021.3
+
+Tasks:
+
+1)
+Build a Navigaion Tool, that allows the Editor User to place two camera positions and move between them.
+If an object is placed between these two camera positions, the player should move around them, procedurally.
+You're allowed to use DoTween or any other tweening library (iTween for example).
+
+2)
+Build a *.json read/write system.
+Please use ScriptableObjects and create an example data sheet for us.
+
+Your completed work will be tested in regards to:
+
+- Game Feel
+- Optimization
+- readability of your code
+
+
+if any questions arrise, please give us a call 0531 3884 31 or +49 1781962615
+
+
+Best Regards,
+Niko Becker
