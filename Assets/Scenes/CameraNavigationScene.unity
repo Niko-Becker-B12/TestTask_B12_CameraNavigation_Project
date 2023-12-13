@@ -130,7 +130,7 @@ LightingSettings:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Settings.lighting
-  serializedVersion: 4
+  serializedVersion: 5
   m_GIWorkflowMode: 1
   m_EnableBakedLightmaps: 1
   m_EnableRealtimeLightmaps: 0
@@ -164,13 +164,13 @@ LightingSettings:
   m_PVRCulling: 1
   m_PVRSampling: 1
   m_PVRDirectSampleCount: 32
-  m_PVRSampleCount: 500
-  m_PVREnvironmentSampleCount: 500
+  m_PVRSampleCount: 512
+  m_PVREnvironmentSampleCount: 512
   m_PVREnvironmentReferencePointCount: 2048
   m_LightProbeSampleCountMultiplier: 4
   m_PVRBounces: 2
   m_PVRMinBounces: 2
-  m_PVREnvironmentMIS: 0
+  m_PVREnvironmentImportanceSampling: 0
   m_PVRFilteringMode: 2
   m_PVRDenoiserTypeDirect: 0
   m_PVRDenoiserTypeIndirect: 0
@@ -185,6 +185,7 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaIndirect: 2
   m_PVRFilteringAtrousPositionSigmaAO: 1
   m_PVRTiledBaking: 0
+  m_NumRaysToShootPerTexel: -1
 --- !u!1 &239097041
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,7 +426,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 448233417}
-  - component: {fileID: 448233416}
   m_Layer: 0
   m_Name: JSONManager
   m_TagString: Untagged
@@ -433,18 +433,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &448233416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 448233415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fb26615a2d64af47b71d047422abde3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &448233417
 Transform:
   m_ObjectHideFlags: 0
@@ -714,6 +702,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1060,7 +1049,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1182,7 +1170,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1749630641}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
         m_MethodName: OnCameraPositionChosen
         m_Mode: 3
@@ -1316,7 +1304,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 448233416}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: JSONManager, Assembly-CSharp
         m_MethodName: ReadMainCameraPosition
         m_Mode: 1
@@ -1609,7 +1597,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 448233416}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: JSONManager, Assembly-CSharp
         m_MethodName: WriteMainCameraPosition
         m_Mode: 1
@@ -1730,7 +1718,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Position 1
+  m_Text: Camera Position 1
 --- !u!222 &996557094
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1810,7 +1798,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Position 2
+  m_Text: Camera Position 2
 --- !u!222 &1062699296
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1923,7 +1911,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Position 3
+  m_Text: Camera Position 3
 --- !u!222 &1427142333
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2208,7 +2196,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1749630642}
-  - component: {fileID: 1749630641}
+  - component: {fileID: 1749630643}
   m_Layer: 0
   m_Name: CameraManager
   m_TagString: Untagged
@@ -2216,24 +2204,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1749630641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1749630640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b7a59dc8616c834a963728e6f789e35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraPositions:
-  - {fileID: 1798956217}
-  - {fileID: 1506243953}
-  - {fileID: 974432242}
-  transitionTime: 1
-  collisionLayerName: Avoid Collision
 --- !u!4 &1749630642
 Transform:
   m_ObjectHideFlags: 0
@@ -2249,6 +2219,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1749630643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749630640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc73d295824a3245827d62dba17505f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraPosition1: {fileID: 1798956214}
+  cameraPosition2: {fileID: 1506243950}
+  cameraPosition3: {fileID: 974432239}
+  cameraPositions: {fileID: 11400000, guid: b63afc1cc2a6dfc44a0befe20f83f90b, type: 2}
 --- !u!1 &1798956214
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,7 +2394,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1749630641}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
         m_MethodName: OnCameraPositionChosen
         m_Mode: 3
@@ -2542,7 +2528,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1749630641}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
         m_MethodName: OnCameraPositionChosen
         m_Mode: 3
