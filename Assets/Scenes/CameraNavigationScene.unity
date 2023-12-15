@@ -2347,7 +2347,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e7ebb11bdd22c498f3850a756321d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionDuration: 1
+  transitionDuration: 2
+  baseArcResolution: 4
+  arcSubsegments: 6
+  avoidanceRadius: 0.3
+  possibleArcStrengthValues:
+  - 0.4
+  - 0.6
+  - 0.8
 --- !u!1 &1798956214
 GameObject:
   m_ObjectHideFlags: 0
