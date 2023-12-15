@@ -443,7 +443,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 448233417}
-  - component: {fileID: 448233416}
+  - component: {fileID: 448233418}
   m_Layer: 0
   m_Name: JSONManager
   m_TagString: Untagged
@@ -451,18 +451,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &448233416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 448233415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fb26615a2d64af47b71d047422abde3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &448233417
 Transform:
   m_ObjectHideFlags: 0
@@ -478,6 +466,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &448233418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448233415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017ab1b65baee0e42856485d96d782b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &463929845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,13 +1360,27 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 448233416}
+      - m_Target: {fileID: 448233418}
         m_TargetAssemblyTypeName: JSONManager, Assembly-CSharp
-        m_MethodName: ReadMainCameraPosition
-        m_Mode: 1
+        m_MethodName: DeserializeFromJSON
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 11400000, guid: 0563d617ca75e6845b24056eef5ba115,
+            type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1749630643}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: MoveCameraToWaypoint
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 0563d617ca75e6845b24056eef5ba115,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: CameraDataSheet, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1669,12 +1683,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 448233416}
-        m_TargetAssemblyTypeName: JSONManager, Assembly-CSharp
-        m_MethodName: WriteMainCameraPosition
-        m_Mode: 1
+      - m_Target: {fileID: 11400000, guid: 0563d617ca75e6845b24056eef5ba115, type: 2}
+        m_TargetAssemblyTypeName: CameraDataSheet, Assembly-CSharp
+        m_MethodName: CopyDataFrom
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 963194227}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Camera, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 448233418}
+        m_TargetAssemblyTypeName: JSONManager, Assembly-CSharp
+        m_MethodName: SerializeToJSON
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 0563d617ca75e6845b24056eef5ba115,
+            type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
