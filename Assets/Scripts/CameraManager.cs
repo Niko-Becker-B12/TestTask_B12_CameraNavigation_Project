@@ -11,7 +11,7 @@ public class CameraManager : MonoBehaviour
 
     public void MoveCameraToWaypoint(Vector3 position, Vector3 rotation)
     {
-        if (activeCameraTransition != null && activeCameraTransition.IsPlaying())
+        if (activeCameraTransition != null && activeCameraTransition.IsActive())
         {
             activeCameraTransition.Kill();
         }
