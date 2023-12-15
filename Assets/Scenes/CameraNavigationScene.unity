@@ -478,6 +478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017ab1b65baee0e42856485d96d782b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  folderPath: JSON
 --- !u!1 &463929845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,7 +1363,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 448233418}
         m_TargetAssemblyTypeName: JSONManager, Assembly-CSharp
-        m_MethodName: DeserializeFromJSON
+        m_MethodName: DeserializeFromFile
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: 0563d617ca75e6845b24056eef5ba115,
@@ -1697,7 +1698,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 448233418}
         m_TargetAssemblyTypeName: JSONManager, Assembly-CSharp
-        m_MethodName: SerializeToJSON
+        m_MethodName: SerializeToFile
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: 0563d617ca75e6845b24056eef5ba115,

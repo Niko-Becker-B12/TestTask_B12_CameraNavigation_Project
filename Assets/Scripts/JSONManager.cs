@@ -12,14 +12,15 @@ public class JSONManager : MonoBehaviour
         return Path.Combine(folderPath, o.GetType().Name, o.name + ".json");
     }
 
-    public void SerializeToJSON(Object objectToSerialize)
+    public void SerializeToFile(Object objectToSerialize)
     {
         string filePath = GetFilePathForObject(objectToSerialize);
+
         Directory.CreateDirectory(Path.GetDirectoryName(filePath));
         File.WriteAllText(filePath, JsonUtility.ToJson(objectToSerialize));
     }
 
-    public void DeserializeFromJSON(Object objectToOverwrite)
+    public void DeserializeFromFile(Object objectToOverwrite)
     {
         string filePath = GetFilePathForObject(objectToOverwrite);
 
