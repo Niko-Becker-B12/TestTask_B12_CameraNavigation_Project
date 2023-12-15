@@ -2348,6 +2348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionDuration: 2
+  transitionEase: 34
   baseArcResolution: 4
   arcSubsegments: 6
   avoidanceRadius: 0.3

@@ -6,8 +6,11 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    public float transitionDuration;
+    [Header("Transition Settings")]
+    public float transitionDuration = 2.0f;
+    public Ease transitionEase = Ease.OutQuad;
 
+    [Header("Arc Settings")]
     [Tooltip("When checking for obstacles, this determines the amount of physics checks to do for each path.")]
     [Range(0, 10)]
     public int baseArcResolution = 4;
@@ -45,15 +48,15 @@ public class CameraManager : MonoBehaviour
         if (TryGetObstacleFreeArcPath(mainCamera.transform.position, position, arcToTheRight, out List<Vector3> waypoints))
         {
             activeCameraTransition = DOTween.Sequence()
-                .Join(mainCamera.DOPath(waypoints.ToArray(), transitionDuration))
-                .Join(mainCamera.DORotate(rotation, transitionDuration));
+                .Join(mainCamera.DOPath(waypoints.ToArray(), transitionDuration).SetEase(transitionEase))
+                .Join(mainCamera.DORotate(rotation, transitionDuration).SetEase(transitionEase));
         }
         else
         {
             // Fall back to linear transition in case no obstacle avoidance is possible.
             activeCameraTransition = DOTween.Sequence()
-                .Join(mainCamera.DOMove(position, transitionDuration))
-                .Join(mainCamera.DORotate(rotation, transitionDuration));
+                .Join(mainCamera.DOMove(position, transitionDuration).SetEase(transitionEase))
+                .Join(mainCamera.DORotate(rotation, transitionDuration).SetEase(transitionEase));
         }
     }
 
