@@ -77,6 +77,8 @@ public class CameraManager : MonoBehaviour
 
         foreach (var arcStength in possibleArcStrengthValues)
         {
+            waypoints.Clear();
+
             DOCurve.CubicBezier.GetSegmentPointCloud(
                 waypoints,
                 startPosition,
