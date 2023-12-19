@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b00ba58371e7924ea296f85b337ba13, type: 3}
+  m_Name: test_camera_set_2
+  m_EditorClassIdentifier: 
+  cameraList:
+  - cameraName: cam_position_1
+    fieldOfView: 60
+    position: {x: 6.9351754, y: 3.4, z: 4}
+    rotation: {x: 0, y: -0.9003567, z: -0, w: 0.4351525}
+  - cameraName: cam_position_2
+    fieldOfView: 60
+    position: {x: -7.964825, y: 3.4, z: 4.0299997}
+    rotation: {x: -0, y: 0.8168849, z: -0, w: 0.57680076}
+  - cameraName: cam_position_3
+    fieldOfView: 60
+    position: {x: -7.874825, y: 6.58, z: -9.65}
+    rotation: {x: 0.24366273, y: 0.36336643, z: -0.09906504, w: 0.89374465}
